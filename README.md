@@ -19,15 +19,15 @@ TaskApp is a simple web-based task management application that allows users to a
 - Go Templates: Used for rendering dynamic content on the frontend.
 
 - Project Structure
-  /taskapp
-  ├── main.go # The main Go program with routes and logic
-  ├── frontend
-  │ ├── index.html # The main page with the task list and add form
-  │ ├── task_details.html # Template for task detail page
-  │ ├── update.html # Template for updating a task
-  │ └── styles.css # Styles for the app
-  ├── sources # Directory for additional files (like images, etc.)
-  └── README.md # Project documentation
+  - /taskapp
+  - ├── main.go # The main Go program with routes and logic
+  - ├── frontend
+  - │ ├── index.html # The main page with the task list and add form
+  - │ ├── task_details.html # Template for task detail page
+  - │ ├── update.html # Template for updating a task
+  - │ └── styles.css # Styles for the app
+  - ├── sources # Directory for additional files (like images, etc.)
+  - └── README.md # Project documentation
 
 # Installation
 
