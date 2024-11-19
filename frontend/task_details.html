@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Name}} - Task Details</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Task Details</h1>
+  </header>
+
+  <section id="task-details">
+    <h2>{{.Name}}</h2>
+    <p><strong>Description:</strong> {{.Description}}</p>
+    <p><strong>Deadline:</strong> {{.Deadline.Format "Mon, 02 Jan 2006 15:04:05"}}</p>
+  </section>
+
+  <div class="button-container">
+    <a href="/tasks/{{.ID}}/update">
+      <button type="button" class="update-button">Update Task</button>
+    </a>
+
+    <form action="/tasks/{{.ID}}" method="POST" style="display:inline;">
+      <input type="hidden" name="_method" value="DELETE" />
+      <button type="submit" class="delete-button">Delete Task</button>
+    </form>
+
+    <a href="/">
+      <button type="button" class="back-button">Back to Task List</button>
+    </a>
+  </div>
+
+</body>
+
+</html>

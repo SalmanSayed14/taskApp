@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Task Manager</h1>
+  </header>
+
+  <section id="task-form">
+    <h2>Add New Task</h2>
+    <form action="/tasks" method="POST">
+      <input type="text" name="name" placeholder="Task Name" required />
+      <input type="text" name="desc" placeholder="Description" required />
+      <input type="datetime-local" name="deadline" required />
+      <button type="submit">Add Task</button>
+    </form>
+  </section>
+
+  <section id="task-list">
+    <h2>Task List</h2>
+    <ul>
+      {{range .Tasks}}
+      <li>
+        <div class="task">
+          <!-- Task Name (Clickable) -->
+          <span class="task-name">
+            {{.Name}} - Time left: {{.Remaining}}
+          </span>
+        </div>
+
+        <div class="button-container">
+          <!-- Details Button -->
+          <a href="/tasks/{{.ID}}/details">
+            <button type="button" class="update-button">Details</button>
+          </a>
+          <!-- Delete Task Button -->
+          <form action="/tasks/{{.ID}}" method="POST" style="display:inline;">
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="delete-button">Delete</button>
+          </form>
+
+          <!-- Update Task Button -->
+          <a href="/tasks/{{.ID}}/update">
+            <button type="button" class="update-button">Update</button>
+          </a>
+        </div>
+
+      </li>
+      {{else}}
+      <li>No tasks available.</li>
+      {{end}}
+    </ul>
+  </section>
+</body>
+
+</html>

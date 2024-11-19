@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Task</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Update Task</h1>
+  </header>
+
+  <section id="task-form">
+    <form action="/tasks/{{.ID}}/update" method="POST">
+      <input type="text" name="name" value="{{.Name}}" required />
+      <input type="text" name="desc" value="{{.Description}}" required />
+      <input type="datetime-local" name="deadline" value="{{.Deadline.Format " 2006-01-02T15:04"}}" required />
+      <button type="submit">Update Task</button>
+    </form>
+  </section>
+
+  <footer>
+    <a href="/">
+      <button type="button">Back</button>
+    </a>
+  </footer>
+</body>
+
+</html>
