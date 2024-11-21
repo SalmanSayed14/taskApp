@@ -34,28 +34,29 @@ go run main.go
 # Project Structure
 
 TaskApp/
-├── handlers/ # Handlers for HTTP routes
-│ ├── add_task.go # Add new task
-│ ├── delete_task.go # Delete task
-│ ├── update_tsk_details.go # Show update form
-│ ├── update.go # Update task details
-│ ├── show_task_details.go # Show task details
-│ ├── serve_css.go # Serve CSS file
-│ └── index.go # Render task list on homepage
-├── task/ # Task-related logic
-│ ├── create.go # Add new task to the list
-│ ├── delete.go # Delete a task
-│ ├── update.go # Update task
-│ ├── calculate.go # Calculate remaining time for tasks
-│ └── task.go # Task struct and global task list
-├── templates/ # HTML templates
-│ ├── index.html # Homepage - Task list
-│ ├── task_details.html # Task details view
-│ └── update.html # Task update form
-├── frontend/ # Static assets
-│ └── styles.css # Stylesheet for the app
-├── main.go # Main entry point for the application
-└── README.md # Project documentation (this file)
+
+- ├── handlers/ # Handlers for HTTP routes
+- │ ├── add_task.go # Add new task
+- │ ├── delete_task.go # Delete task
+- │ ├── update_tsk_details.go # Show update form
+- │ ├── update.go # Update task details
+- │ ├── show_task_details.go # Show task details
+- │ ├── serve_css.go # Serve CSS file
+- │ └── index.go # Render task list on homepage
+- ├── task/ # Task-related logic
+- │ ├── create.go # Add new task to the list
+- │ ├── delete.go # Delete a task
+- │ ├── update.go # Update task
+- │ ├── calculate.go # Calculate remaining time for tasks
+- │ └── task.go # Task struct and global task list
+- ├── templates/ # HTML templates
+- │ ├── index.html # Homepage - Task list
+- │ ├── task_details.html # Task details view
+- │ └── update.html # Task update form
+- ├── frontend/ # Static assets
+- │ └── styles.css # Stylesheet for the app
+- ├── main.go # Main entry point for the application
+- └── README.md # Project documentation (this file)
 
 # How it Works
 
