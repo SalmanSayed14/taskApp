@@ -1,11 +1,9 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
@@ -14,7 +12,6 @@ body {
   padding: 20px;
 }
 
-/* Header Styles */
 header {
   display: flex;
   background-color: #4caf50;
@@ -29,10 +26,9 @@ h1 {
   font-size: 2rem;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); /* Centers the h1 exactly in the middle */
+  transform: translateX(-50%);
 }
 
-/* Task Form Styles */
 #task-form {
   background-color: white;
   padding: 20px;
@@ -73,7 +69,6 @@ h1 {
   background-color: #45a049;
 }
 
-/* Task List Styles */
 #task-list {
   background-color: white;
   padding: 20px;
@@ -132,7 +127,7 @@ button[type='delete'] {
   justify-content: flex-end;
   display: flex;
   gap: 5px;
-  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 button[type='submit']:hover {
@@ -155,7 +150,6 @@ a button:hover {
   background-color: #007bb5;
 }
 
-/* Task Description Visibility */
 .task-description {
   display: none;
 }
@@ -164,7 +158,6 @@ a button:hover {
   display: block;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   #task-form,
   #task-list {
@@ -183,7 +176,7 @@ a button:hover {
   }
 
   #task-list li a {
-    margin-left: 10px; /* Space between delete and update buttons */
+    margin-left: 10px;
   }
 
   button[type='submit'],
@@ -194,7 +187,7 @@ a button:hover {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.5rem; /* Smaller heading for mobile */
+    font-size: 1.5rem;
   }
 
   #task-form,
@@ -204,14 +197,14 @@ a button:hover {
 
   button[type='submit'],
   a button {
-    width: 100%; /* Full-width buttons on smaller screens */
+    width: 100%;
   }
 
   #task-list li {
-    width: 100%; /* Full-width list items */
+    width: 100%;
   }
 
   .task-description p {
-    font-size: 0.9rem; /* Smaller text for descriptions */
+    font-size: 0.9rem;
   }
 }

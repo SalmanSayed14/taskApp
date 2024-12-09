@@ -16,14 +16,12 @@ func AddTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Parse the deadline
 	deadline, err := time.Parse("2006-01-02T15:04", deadlineStr)
 	if err != nil {
 		http.Error(w, "Invalid deadline format", http.StatusBadRequest)
 		return
 	}
 
-	// Increment task ID and create the new task
 	newTask := task.Task{
 		Name:        name,
 		Description: desc,
@@ -32,6 +30,5 @@ func AddTask(w http.ResponseWriter, r *http.Request) {
 
 	task.AddTask(newTask)
 
-	// Redirect back to the index page
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }

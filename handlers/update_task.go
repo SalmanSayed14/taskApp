@@ -24,7 +24,6 @@ func ShowUpdateForm(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Render the update form
 	tmpl, err := template.ParseFiles("templates/update.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -45,21 +44,17 @@ func UpdateTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Get updated data from form
 	name := r.PostFormValue("name")
 	desc := r.PostFormValue("desc")
 	deadlineStr := r.PostFormValue("deadline")
 
-	// Parse the new deadline
 	deadline, err := time.Parse("2006-01-02T15:04", deadlineStr)
 	if err != nil {
 		http.Error(w, "Invalid deadline format", http.StatusBadRequest)
 		return
 	}
 
-	// Update the task
 	task.UpdateTask(id, name, desc, deadline)
 
-	// Redirect back to the index page
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }

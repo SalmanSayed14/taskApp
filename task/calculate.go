@@ -16,14 +16,13 @@ func CalculateRemainingTime(deadline time.Time) string {
 	hours := int(duration.Hours()) % 24
 	minutes := int(duration.Minutes()) % 60
 
-	// Format remaining time as "X days Y hours Z minutes"
 	return fmt.Sprintf("%d days %d hours %d minutes", days, hours, minutes)
 }
 
 func CalculateRemainingDuration(deadline time.Time) time.Duration {
 	now := time.Now()
 	if deadline.Before(now) {
-		return -1 // Return a negative value if the task is expired
+		return -1
 	}
-	return deadline.Sub(now) // Calculate the remaining duration
+	return deadline.Sub(now)
 }

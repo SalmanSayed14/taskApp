@@ -18,6 +18,5 @@ func DeleteTask(w http.ResponseWriter, r *http.Request) {
 
 	task.DeleteTask(id)
 
-	// Redirect back to the index page
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }

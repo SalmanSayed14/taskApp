@@ -17,14 +17,12 @@ func ShowTaskDetails(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Find the task by ID
 	t := task.GetTaskByID(id)
 	if t == nil {
 		http.NotFound(w, r)
 		return
 	}
 
-	// Render the task details page
 	tmpl, err := template.ParseFiles("templates/task_details.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
